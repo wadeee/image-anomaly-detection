@@ -4,7 +4,7 @@ from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from anomalib.models import Patchcore
 from anomalib import TaskType
 from anomalib.data.image.folder import Folder
-from anomalib.loggers import AnomalibWandbLogger
+from anomalib.loggers.wandb import AnomalibWandbLogger
 from anomalib.engine import Engine
 import argparse
 from torchvision.transforms import v2
