@@ -39,6 +39,19 @@ python train_anomalib/train_patchcore_anomalib.py --dataset_root C:/Users/Wadec/
 
 ```bash
 python train_anomalib/train_reversedistillation_anomalib.py --dataset_root C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_lego_256/two_up --name_normal_dir 90_DEG --name_wandb_experiment revdist_twoup_v1 --name two_up --max_epochs 100 --patience 10
+python train_anomalib/train_reversedistillation_anomalib.py --dataset_root C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_wood/a-no-black --name_normal_dir normal --name_wandb_experiment revdist_wood_a_no_black_v1 --name a-no-black --max_epochs 100 --patience 10
+```
+
+### EfficientAD
+
+```bash
+python train_anomalib/train_efficientAD_anomalib.py --dataset_root C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_wood/d-no-black --name_normal_dir normal --name_wandb_experiment effAD_d_no_black_v1 --name d-no-black --max_epochs 100 --patience 10 
+```
+
+### FastFlow
+
+```bash
+python train_anomalib/train_fastflow_anomalib.py --dataset_root C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_wood/d-no-black --name_normal_dir normal --name_wandb_experiment effAD_d_no_black_v1 --name d-no-black --max_epochs 100 --patience 10
 ```
 
 ## Test image models
@@ -53,4 +66,11 @@ python infer_anomalib/test_model_patchcore_gpu.py --device cuda --path_torch_mod
 
 ```bash
 python infer_anomalib/test_model_reversedistillation_gpu.py --device cuda --path_torch_model C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/ReverseDistillation/two_up/v0/weights/lightning/model.ckpt --path_dataset C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_lego_256/two_up --name two_up --dir_result C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/ReverseDistillation/two_up/v0
+python infer_anomalib/test_model_reversedistillation_gpu.py --device cuda --normal_dir normal --path_torch_model C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/ReverseDistillation/a-no-black/v0/weights/lightning/model.ckpt --path_dataset C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_wood/a-no-black --name a-no-black --dir_result C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/ReverseDistillation/a-no-black/v0
+```
+
+### FastFlow
+
+```bash
+python infer_anomalib/test_model_fastflow_gpu.py --device cuda --normal_dir normal --path_torch_model C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/Fastflow/b-no-black/v0/weights/lightning/model.ckpt --path_dataset C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/dataset/images_wood/b-no-black --name b-no-black --dir_result C:/Users/Wadec/Documents/Projects/Image_Anomaly_Detection/results/Fastflow/b-no-black/v0
 ```
